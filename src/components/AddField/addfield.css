@@ -1,0 +1,16 @@
+.addfield > button {
+  background-color: purple;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  color: #333333;
+  font-size: 16px;
+  padding: 8px 16px;
+}
+.addfield {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 20px;
+}

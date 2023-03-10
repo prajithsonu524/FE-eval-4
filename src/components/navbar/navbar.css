@@ -1,0 +1,35 @@
+.navbar {
+  background-color: rgb(39, 39, 39);
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.collection-types {
+  padding: 20px;
+}
+.collection-types ul {
+  text-decoration: none;
+
+  padding-left: 20px;
+}
+.collection-types ul li {
+  padding: 10px;
+}
+
+.content-builder {
+  padding: 20px;
+
+  font-weight: 600;
+}
+.list {
+  padding-top: 10px;
+}
+li:hover {
+  background-color: #0000;
+}
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}

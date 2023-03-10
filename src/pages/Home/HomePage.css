@@ -1,0 +1,9 @@
+.home {
+  display: flex;
+}
+.sidebar {
+  flex-basis: 30%;
+}
+.main {
+  flex-basis: 70%;
+}

@@ -1,0 +1,14 @@
+.logo {
+  color: aliceblue;
+  background-color: rgb(89, 6, 206);
+  margin: 0;
+  height: 70px;
+  padding-left: 10px;
+}
+.logo h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  line-height: 70px;
+}
