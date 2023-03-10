@@ -41,7 +41,7 @@ export default function Builder() {
         fields: [],
       },
     }).then((res) => {
-      console.log(res, 'res');
+      window.location.reload();
     });
     closeModalContent();
   }
@@ -55,8 +55,7 @@ export default function Builder() {
     });
   }
   function addField(name) {
-    console.log('function', id);
-    console.log(id, 'cuur id');
+
     makeRequest(ADD_FIELD(id), {
       data: {
         field: name,

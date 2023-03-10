@@ -10,7 +10,7 @@ export const ADD_CONTENT_TYPE = {
 }
 export const ADD_FIELD = (id) => {
     return {
-        method: 'POST',
+        method: 'PUT',
         url: `/addfield/${id}`
     }
 }

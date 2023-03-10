@@ -24,13 +24,7 @@ export default function Navbar() {
             >
               Collection Type 1
             </li>
-            <li
-              style={{
-                fontWeight: '500',
-              }}
-            >
-              Collection Type 2
-            </li>
+   
           </ul>
         </div>
       </div>

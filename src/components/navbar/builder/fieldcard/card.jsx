@@ -6,7 +6,7 @@ import edit from '../../../../assets/edit/user-edit-text-message-note@3x.png';
 import './card.css';
 
 export default function Card({ field, deleteField }) {
-  console.log(field, 'fieldscard');
+ 
   return (
     <div className='fieldcard'>
       <div className='field-card-body'>
