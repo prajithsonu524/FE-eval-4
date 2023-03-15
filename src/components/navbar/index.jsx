@@ -1,10 +1,12 @@
 //import { Link } from 'react-router-dom';
-
+import { useContext } from 'react';
+import { ContentTypeDataContext } from '../../contexts/ContentType';
 //import Builder from './builder';
 import './navbar.css';
 // import { useState } from 'react';
 // eslint-disable-next-line react/prop-types
 export default function Navbar() {
+  const {  contentTypeList } = useContext(ContentTypeDataContext)
   return (
     <div className='navbar'>
       <div className='collection-types'>
@@ -17,13 +19,12 @@ export default function Navbar() {
         </p>
         <div className='list'>
           <ul>
-            <li
-              style={{
-                fontWeight: '500',
-              }}
-            >
-              Collection Type 1
-            </li>
+            {contentTypeList && contentTypeList.map((item) => (
+              <li key={item.id}>
+                {item.contentTypeName}
+              </li>
+            ))
+            }
    
           </ul>
         </div>

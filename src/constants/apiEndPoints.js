@@ -20,6 +20,12 @@ export const DELETE_FIELD = (id) => {
         url: `/deletefield/${id}`
     }
 }
+export const EDIT_FIELD = (id) => {
+    return {
+        method: 'PUT',
+        url: `/update/${id}`
+    }
+}
 export function LOGIN(email, password) {
     return {
         url: 'auth/login',
