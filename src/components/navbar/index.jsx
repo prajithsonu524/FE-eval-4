@@ -6,7 +6,7 @@ import './navbar.css';
 // import { useState } from 'react';
 // eslint-disable-next-line react/prop-types
 export default function Navbar() {
-  const {  contentTypeList } = useContext(ContentTypeDataContext)
+  const { contentTypeList } = useContext(ContentTypeDataContext);
   return (
     <div className='navbar'>
       <div className='collection-types'>
@@ -18,14 +18,9 @@ export default function Navbar() {
           COLLECTION TYPES
         </p>
         <div className='list'>
-          <ul>
-            {contentTypeList && contentTypeList.map((item) => (
-              <li key={item.id}>
-                {item.contentTypeName}
-              </li>
-            ))
-            }
-   
+          <ul style={{ overflow: 'auto' }}>
+            {contentTypeList &&
+              contentTypeList.map((item) => <li key={item.id}>{item.contentTypeName}</li>)}
           </ul>
         </div>
       </div>

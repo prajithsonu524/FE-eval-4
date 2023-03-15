@@ -1,4 +1,4 @@
-.addtype > button {
+.edittype > button {
   background-color: rgb(89, 6, 206);
   border: 1px solid #cccccc;
   border-radius: 4px;
@@ -6,7 +6,7 @@
   font-size: 16px;
   padding: 8px 16px;
 }
-.addtype {
+.edittype {
   display: flex;
 flex-direction: column;
   align-items: center;

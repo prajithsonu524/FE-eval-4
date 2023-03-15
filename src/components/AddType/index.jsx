@@ -3,7 +3,7 @@ import './addtype.css';
 import { useState } from 'react';
 // import { makeRequest } from '../../utils/requests/makeRequest';
 // import { ADD_CONTENT_TYPE } from '../../constants/apiEndPoints';
-export default function Popup({ addContentType }) {
+export default function Popup({ addContentType, closeModalContent }) {
   const [name, setName] = useState('');
 
   function nameHandler(e) {
@@ -20,6 +20,9 @@ export default function Popup({ addContentType }) {
         <br />
         <button type='submit' onClick={() => addContentType(name)}>
           Submit
+        </button>
+        <button type='submit' onClick={() => closeModalContent()}>
+          Close
         </button>
       </div>
     </div>

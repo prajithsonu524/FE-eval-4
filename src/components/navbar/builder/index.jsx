@@ -18,8 +18,9 @@ import {
   DELETE_FIELD,
   EDIT_FIELD,
 } from '../../../constants/apiEndPoints';
-import Popup from '../../AddType/index';
+import AddType from '../../AddType/index';
 import AddField from '../../AddField/addField';
+import EditContName from '../../EditContName';
 import { style } from '../../AddType/index';
 import Modal from 'react-modal';
 
@@ -33,6 +34,13 @@ export default function Builder() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpenfield, setIsModalOpenfield] = useState(false);
+  const [isModalOpenEdit, setIsModalOpenEdit] = useState(false);
+  const openModalEdit = () => {
+    setIsModalOpenEdit(true);
+  };
+  const closeModalEdit = () => {
+    setIsModalOpenEdit(false);
+  };
 
   const openModalContent = () => {
     setIsModalOpen(true);
@@ -111,6 +119,16 @@ export default function Builder() {
         console.log(err, 'caught error');
       });
   }
+  function editContentName(name) {
+    makeRequest(EDIT_FIELD(id), {
+      data: {
+        name: name,
+      },
+    }).then((res) => {
+      window.alert('Content type name changed successfully');
+      window.location.reload();
+    });
+  }
 
   // console.log(data[0], 'insiide builder');
   useEffect(() => {
@@ -153,7 +171,7 @@ export default function Builder() {
                 + New Type
               </button>
               <Modal isOpen={isModalOpen} contentLabel='Small Modal' style={style}>
-                {<Popup addContentType={addContentType} />}
+                {<AddType addContentType={addContentType} closeModalContent={closeModalContent} />}
               </Modal>
             </div>
             <div style={{ overflow: 'auto', height: '800px' }}>
@@ -177,7 +195,16 @@ export default function Builder() {
                     width: '25px',
                     marginLeft: '5px',
                   }}
+                  onClick={() => openModalEdit()}
                 />
+                <Modal isOpen={isModalOpenEdit} contentLabel='Small Modal' style={style}>
+                  {
+                    <EditContName
+                      editContentName={editContentName}
+                      closeModalEdit={closeModalEdit}
+                    />
+                  }
+                </Modal>
               </span>
             </div>
             <h2>
@@ -195,7 +222,7 @@ export default function Builder() {
               + Add another field
             </button>
             <Modal isOpen={isModalOpenfield} contentLabel='Small Modal' style={style}>
-              {<AddField addField={addField} />}
+              {<AddField addField={addField} closeModalfield={closeModalfield} />}
             </Modal>
             <div style={{ height: '600px', overflow: 'auto' }}>
               {!data.find((obj) => obj.id === id)

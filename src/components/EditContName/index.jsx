@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import './addfield.css';
+import './edittype.css';
 import { useState } from 'react';
 // import { makeRequest } from '../../utils/requests/makeRequest';
 // import { ADD_CONTENT_TYPE } from '../../constants/apiEndPoints';
-export default function AddField({ addField, closeModalfield }) {
+export default function EditContName({ editContentName, closeModalEdit }) {
   const [name, setName] = useState('');
 
   function nameHandler(e) {
@@ -12,17 +12,17 @@ export default function AddField({ addField, closeModalfield }) {
 
   return (
     <div>
-      <div className='addfield'>
+      <div className='edittype'>
         <label>
-          Name of Field
+          New Name of Content Type
           <input type='text' value={name} onChange={nameHandler} />
         </label>
         <br />
-        <button type='submit' onClick={() => addField(name)}>
+        <button type='submit' onClick={() => editContentName(name)}>
           Submit
         </button>
-        <button type='submit' onClick={() => closeModalfield()}>
-          close
+        <button type='submit' onClick={() => closeModalEdit()}>
+          Close
         </button>
       </div>
     </div>

@@ -32,7 +32,13 @@ export default function Card({ field, deleteField, editField }) {
             onClick={openModalContent}
           ></img>
           <Modal isOpen={isModalOpen} contentLabel='Small Modal' style={style}>
-            {<EditField editField={editField} oldField={field} />}
+            {
+              <EditField
+                editField={editField}
+                oldField={field}
+                closeModalContent={closeModalContent}
+              />
+            }
           </Modal>
           <img
             src={bin}
